@@ -15,9 +15,13 @@ function CarouselItem({ imgs }) {
                     (img, idx) =>
                         <Carousel.Item key={idx}>
                             <img
+                                height="200px"
+                                // width="300px"
+
                                 className="d-block w-100"
                                 src={img}
                                 alt="First slide"
+                                style={{ objectPosition: "top center", objectFit: "cover" }}
                             />
                         </Carousel.Item>
                 )
