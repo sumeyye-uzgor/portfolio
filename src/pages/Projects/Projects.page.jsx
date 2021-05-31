@@ -13,9 +13,6 @@ function Projects({ language }) {
                 {content.projects.map(
                     project => <ProjectCard project={project} key={project.id} />
                 )}
-                {content.projects.map(
-                    project => <ProjectCard project={project} key={project.id} />
-                )}
 
             </Row>
         </Container>
