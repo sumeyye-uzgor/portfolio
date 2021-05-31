@@ -1,8 +1,8 @@
 import React from "react"
 import { Container, Row, Col, Card, Button } from "react-bootstrap"
 import { connect } from "react-redux";
-import HomeContent from "../../contents/pages/Home.content.js"
-import myImg from "../../assets/foto.jpg"
+import HomeContent from "../contents/Home.content.js"
+import myImg from "../assets/foto.jpg"
 
 const Home = ({ language }) => {
     const content = HomeContent.filter(item => item.lang === language)[0]

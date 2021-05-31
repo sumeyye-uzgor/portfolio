@@ -2,8 +2,8 @@ import React from "react"
 import { connect } from "react-redux"
 import { Container, Row } from "react-bootstrap"
 
-import ProjectCard from "../../components/ProjectCard.component"
-import ProjectsContent from "../../contents/pages/Projects.content"
+import ProjectCard from "../components/ProjectCard.component"
+import ProjectsContent from "../contents/Projects.content"
 
 function Projects({ language }) {
     const content = ProjectsContent.filter(item => item.lang === language)[0]
