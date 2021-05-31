@@ -10,8 +10,7 @@ const Home = ({ language }) => {
         <Container>
             <Row className="align-items-center justify-content-around">
                 <Col xs={11} md={5} className="m-10">
-                    {/* <Card style={{ margin: "10px" }} >
-                        <Card.Body> */}
+
                     <Row className="justify-content-end" style={{ fontSize: "45px" }}>{content.title1}</Row>
                     <Row className="justify-content-end" style={{ fontSize: "45px" }}>{content.title2}</Row>
                     <Row className="justify-content-end" style={{ fontSize: "45px" }}>{content.title3}</Row>
@@ -22,8 +21,6 @@ const Home = ({ language }) => {
                         <Button variant="light" className="mr-2">{content.hire}</Button>
                         <Button variant="light">{content.website}</Button>
                     </Row>
-                    {/* </Card.Body>
-                    </Card> */}
                 </Col>
                 <Col xs={11} md={6}>
                     <Card style={{ margin: "10px", width: "300px" }}>

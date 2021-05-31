@@ -1,19 +1,28 @@
 import React from "react"
+import { Container, Row, Col, Card } from "react-bootstrap"
+import { connect } from "react-redux";
+import AboutMeContent from "../contents/Aboutme.content"
+import myImg from "../assets/me2.jpeg"
 
-
-function AboutMe() {
+const AboutMe = ({ language }) => {
+    const content = AboutMeContent.filter(item => item.lang === language)[0]
     return (
-        <div style={{ width: "70%", padding: "20px" }}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, distinctio! Distinctio possimus sapiente ipsam maiores aut ullam blanditiis perspiciatis commodi, eligendi, tenetur fuga. Facilis fugit expedita, quae necessitatibus dolorem illum.
-            Expedita, reiciendis, adipisci fugiat repudiandae odio ducimus deserunt sequi quos dolor labore eos amet hic at voluptate ad commodi unde architecto tempora. Mollitia quis, itaque nesciunt enim molestias nisi quaerat.
-            Debitis quisquam culpa veniam accusantium cum ea, quo fugiat quibusdam eligendi nisi perspiciatis earum iusto mollitia numquam velit. Excepturi laudantium necessitatibus odit fugiat, vel exercitationem nemo expedita ipsum dolores incidunt.
-            Ex accusantium fugit nisi ab corrupti commodi, quaerat officia quis consectetur id aliquam dignissimos neque, doloremque blanditiis magni magnam nam exercitationem? Ab vitae suscipit consectetur perspiciatis, culpa impedit maxime illum!
-            Nesciunt quisquam expedita in est officiis temporibus voluptas laborum odio dolores animi. Necessitatibus eos placeat consequatur suscipit ratione ea dolore, porro quia, ad facere quae minus odio beatae soluta quaerat.
-            Ut libero exercitationem maxime optio sapiente quia vel, aperiam molestiae consequuntur provident hic similique numquam soluta voluptas labore, praesentium ratione asperiores? Et porro dolores perferendis nam repellat illum deserunt animi?
-            Dolores necessitatibus, non totam, eius eveniet est nostrum, molestias vero culpa minus odit rerum quasi. Quibusdam, nihil aliquam? Omnis neque autem recusandae ex quis possimus suscipit ullam reiciendis iure consequuntur?
-            Illo incidunt libero repudiandae, nostrum, ab pariatur id repellat, similique vel aliquam quo doloremque commodi nesciunt ut exercitationem hic tempora non accusantium. Ab pariatur excepturi, natus praesentium deleniti tempore esse!
-        </div>
+        <Container>
+            <Row className="align-items-center justify-content-center">
+                <Col xs={11} md={5}>
+                    <Card style={{ margin: "10px", width: "300px" }}>
+                        <img variant="top" src={myImg} alt="sumeyye uzgor" />
+                    </Card>
+                </Col>
+                <Col xs={11} md={6} className="m-10">
+                    {content.desc}
+                </Col>
+            </Row>
+        </Container>
     );
 }
-
-export default AboutMe;
+const mapStateToProps = (state) => {
+    const language = state.lang
+    return { language }
+}
+export default connect(mapStateToProps)(AboutMe);
