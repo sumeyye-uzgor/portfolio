@@ -104,7 +104,7 @@ const ProjectsContent = [
                 imgs: [],
                 githubLink: "https://github.com/sumeyye-uzgor/catch-my-photo",
                 liveLink: "https://catch-my-photo.herokuapp.com/",
-                isLive: false,
+                isLive: true,
                 id: 4,
             },
             {

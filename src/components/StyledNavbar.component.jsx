@@ -25,7 +25,6 @@ function StyledNavbar({ language, setLanguage }) {
                         <Nav.Link href="/comments">{content.comments}</Nav.Link>
                         <Nav.Link href="/aboutme">{content.about}</Nav.Link>
                         <Nav.Link href="/contact">{content.contact}</Nav.Link>
-                        <Nav.Link href="/contact">{content.contact}</Nav.Link>
                         <Button className="p-0 customButton" onClick={() => handleChange("TR")}><Turkish width="30px" height="20px" /></Button>
                         <Button className="p-0 customButton" onClick={() => handleChange("EN")}><English width="30px" height="20px" /></Button>
 
