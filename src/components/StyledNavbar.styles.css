@@ -7,3 +7,10 @@
     background: linear-gradient(45deg, rgb(247, 196, 125) 0%, rgb(250, 106, 106) 50%, rgb(142, 98, 172) 100%);
 
 }
+
+.customButton,.customButton:hover, .customButton:active, .customButton:focus{
+     background: none !important;
+      border: none !important; 
+      outline: none !important;
+      box-shadow: none !important;
+}
