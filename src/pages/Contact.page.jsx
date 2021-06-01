@@ -33,7 +33,7 @@ const Contact = ({ language, openToast, isToast, subject }) => {
                     setInfo({
                         email: "",
                         name: "",
-                        subject: "",
+                        subject: subject,
                         message: "",
                     })
                     openToast({ isErrorMessage: false, toastMessage: content.outMessage });
