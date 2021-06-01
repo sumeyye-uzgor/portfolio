@@ -8,7 +8,7 @@ function ToastNotify({ message, isError }) {
     const toggleShowA = () => setShowA(!showA);
 
     return (
-        <Toast show={showA} onClose={toggleShowA} style={isError ? { backgroundColor: "red" } : { backgroundColor: "green" }}>
+        <Toast show={showA} role="alert" onClose={toggleShowA} style={isError ? { backgroundColor: "red" } : { backgroundColor: "green" }}>
 
             <Toast.Body>{message}</Toast.Body>
         </Toast>

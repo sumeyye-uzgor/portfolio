@@ -2,21 +2,19 @@
 const CommentsContent = [
     {
         lang: "TR",
-        name: "İsim",
-        email: "E-posta",
-        subject: "Konu",
-        message: "Mesaj",
+        name: "Kullanıcı Adı",
+        comment: "Yorum",
         button: "Gönder!",
-        outMessage: "En kısa sürede size dönüş yapacağım!",
+        header: "Yorumlar",
+        emptyMessage: "Henüz hiç yorum yok!"
     },
     {
         lang: "EN",
-        name: "Name",
-        email: "E-mail",
-        subject: "Subject",
-        message: "Message",
+        name: "Username",
+        comment: "Comment",
         button: "Submit!",
-        outMessage: "I will respond you as soon as possible!",
+        header: "Comments",
+        emptyMessage: "Do not have any comments yet!"
     }
 ]
 export default CommentsContent
