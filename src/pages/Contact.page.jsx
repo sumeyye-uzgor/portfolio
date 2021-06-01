@@ -2,10 +2,12 @@ import React, { useState } from "react"
 import { Container, Row, Col, Form, Button } from "react-bootstrap"
 import { connect } from "react-redux";
 import ContactContent from "../contents/Contact.content"
+import ToastNotify from "../components/ToastNotify.component"
 import axios from 'axios';
+import { openToastNotify } from "../redux/actions";
 
 
-const Contact = ({ language }) => {
+const Contact = ({ language, openToast, isToast }) => {
     const content = ContactContent.filter(item => item.lang === language)[0]
     const [info, setInfo] = useState({
         email: "",
@@ -25,18 +27,22 @@ const Contact = ({ language }) => {
     function handleSubmit(e) {
         e.preventDefault();
         const messageBody = { ...info }
-        axios.post('harmantepenaturel.com/api/contact-sumeyye', messageBody)
+        axios.post('https://harmantepenaturel.com/api/contact-sumeyye', messageBody)
             .then(
                 (response) => {
-                    console.log(response);
+                    openToast({ isErrorMessage: false, toastMessage: content.outMessage });
+
                 }
                 , (error) => {
-                    console.log(error);
+                    openToast({ isErrorMessage: true, toastMessage: content.errorMessage });
                 }
             )
     }
     return (
         <Container>
+            <Row className="align-items-center justify-content-center">
+                {isToast && <ToastNotify />}
+            </Row>
             <Row className="align-items-center justify-content-center">
                 <Col xs={11} md={8}>
                     <Form>
@@ -105,6 +111,14 @@ const Contact = ({ language }) => {
 }
 const mapStateToProps = (state) => {
     const language = state.lang
-    return { language }
+    const isToast = state.isToast
+    return { language, isToast }
 }
-export default connect(mapStateToProps)(Contact);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        openToast: ({ isErrorMessage, toastMessage }) => dispatch(openToastNotify({ isErrorMessage, toastMessage }))
+
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Contact);

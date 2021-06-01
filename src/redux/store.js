@@ -1,24 +1,15 @@
-import { createStore } from 'redux';
-// import { userActionTypes } from './user.types';
+import { createStore, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
+import rootReducer from './reducer';
 
-const INITIAL_STATE = {
-    lang: "EN"
+import thunk from 'redux-thunk';
+
+const middlewares = [thunk];
+
+if (process.env.NODE_ENV === 'development') {
+    middlewares.push(logger);
 }
 
-const rootReducer = (state = INITIAL_STATE, action) => {
-    switch (action.type) {
-        case "SET_LANGUAGE":
-            return {
-                ...state,
-                lang: action.payload,
-            }
-        default:
-            return state;
-    }
-
-}
-
-
-
-export const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(...middlewares));
+export default store
 
