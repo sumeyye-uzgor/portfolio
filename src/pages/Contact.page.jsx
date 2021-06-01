@@ -7,12 +7,12 @@ import axios from 'axios';
 import { openToastNotify } from "../redux/actions";
 
 
-const Contact = ({ language, openToast, isToast }) => {
+const Contact = ({ language, openToast, isToast, subject }) => {
     const content = ContactContent.filter(item => item.lang === language)[0]
     const [info, setInfo] = useState({
         email: "",
         name: "",
-        subject: "",
+        subject: subject,
         message: "",
     })
     function handleChange(e) {
@@ -30,6 +30,12 @@ const Contact = ({ language, openToast, isToast }) => {
         axios.post('https://harmantepenaturel.com/api/contact-sumeyye', messageBody)
             .then(
                 (response) => {
+                    setInfo({
+                        email: "",
+                        name: "",
+                        subject: "",
+                        message: "",
+                    })
                     openToast({ isErrorMessage: false, toastMessage: content.outMessage });
 
                 }
@@ -39,7 +45,7 @@ const Contact = ({ language, openToast, isToast }) => {
             )
     }
     return (
-        <Container>
+        <Container style={{ minWidth: "80vw", display: "block" }}>
             <Row className="align-items-center justify-content-center">
                 {isToast && <ToastNotify />}
             </Row>
@@ -112,7 +118,9 @@ const Contact = ({ language, openToast, isToast }) => {
 const mapStateToProps = (state) => {
     const language = state.lang
     const isToast = state.isToast
-    return { language, isToast }
+    const subject = state.subject
+    return { language, isToast, subject }
+
 }
 const mapDispatchToProps = (dispatch) => {
     return {

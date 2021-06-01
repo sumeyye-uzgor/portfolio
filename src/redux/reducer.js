@@ -6,6 +6,7 @@ const INITIAL_STATE = {
     toastMessage: "",
     isToast: false,
     comments: [],
+    subject: "",
 };
 
 const rootReducer = (state = INITIAL_STATE, action) => {
@@ -33,6 +34,11 @@ const rootReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 comments: [...oldComments, action.payload]
+            }
+        case ActionTypes.SET_SUBJECT:
+            return {
+                ...state,
+                subject: action.payload
             }
         default:
             return state;

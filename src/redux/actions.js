@@ -16,23 +16,15 @@ export const addComment = (comment) => ({
     type: ActionTypes.ADD_COMMENT,
     payload: comment,
 })
+export const setSubject = (subject) => ({
+    type: ActionTypes.SET_SUBJECT,
+    payload: subject,
+})
 
 export const openToastNotify = ({ isErrorMessage, toastMessage }) => {
     return dispatch => {
         dispatch(openToast({ isErrorMessage, toastMessage }));
         setTimeout(() =>
             dispatch(closeToast()), 3000)
-        // axios
-        //     .post(`https://jsonplaceholder.typicode.com/todos`, {
-        //         title,
-        //         userId,
-        //         completed: false
-        //     })
-        //     .then(res => {
-        //         dispatch(addTodoSuccess(res.data));
-        //     })
-        //     .catch(err => {
-        //         dispatch(addTodoFailure(err.message));
-        //     });
     };
 };

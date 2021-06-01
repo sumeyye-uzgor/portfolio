@@ -10,7 +10,7 @@ const AboutMe = ({ language }) => {
         <Container>
             <Row className="align-items-center justify-content-center">
                 <Col xs={11} md={5}>
-                    <Card style={{ margin: "10px", width: "300px" }}>
+                    <Card style={{ margin: "10px", width: "270px" }}>
                         <img variant="top" src={myImg} alt="sumeyye uzgor" />
                     </Card>
                 </Col>

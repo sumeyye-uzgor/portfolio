@@ -8,8 +8,8 @@ const Home = ({ language }) => {
     const content = HomeContent.filter(item => item.lang === language)[0]
     return (
         <Container>
-            <Row className="align-items-center justify-content-around">
-                <Col xs={11} md={5} className="m-10">
+            <Row className="align-items-center justify-content-around mt-4" style={{ minWidth: "80vw" }}>
+                <Col xs={11} md={5}>
 
                     <Row className="justify-content-end" style={{ fontSize: "45px" }}>{content.title1}</Row>
                     <Row className="justify-content-end" style={{ fontSize: "45px" }}>{content.title2}</Row>
@@ -23,7 +23,7 @@ const Home = ({ language }) => {
                     </Row>
                 </Col>
                 <Col xs={11} md={6}>
-                    <Card style={{ margin: "10px", width: "300px" }}>
+                    <Card style={{ margin: "10px", width: "250px" }}>
                         <img variant="top" src={myImg} alt="sumeyye uzgor" />
                     </Card>
                 </Col>

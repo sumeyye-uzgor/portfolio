@@ -1,0 +1,9 @@
+.styledNav{
+    height: 10vh;
+    background: rgb(221, 205, 181);
+    background: linear-gradient(45deg, rgba(250, 225, 190, 1) 0%, rgb(255, 204, 204) 50%, rgb(169, 151, 180) 100%);
+}
+.styledNav:hover{
+    background: linear-gradient(45deg, rgb(247, 196, 125) 0%, rgb(250, 106, 106) 50%, rgb(142, 98, 172) 100%);
+
+}
